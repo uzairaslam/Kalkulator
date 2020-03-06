@@ -1,0 +1,30 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netstandard2.0</TargetFramework>
+    <ProduceReferenceAssembly>true</ProduceReferenceAssembly>
+  </PropertyGroup>
+
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
+    <DebugType>portable</DebugType>
+    <DebugSymbols>true</DebugSymbols>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Xamarin.Forms" Version="4.5.0.356" />
+    <PackageReference Include="Xamarin.Essentials" Version="1.5.0" />
+    <PackageReference Include="Xamarin.KeyboardHelper" Version="2.0.7" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Reference Include="Syncfusion.Buttons.XForms">
+      <HintPath>..\..\..\..\Installed Softwares\Syncfusion\APPDIR\Xamarin\lib\pcl\Syncfusion.Buttons.XForms.dll</HintPath>
+    </Reference>
+    <Reference Include="Syncfusion.Core.XForms">
+      <HintPath>..\..\..\..\Installed Softwares\Syncfusion\APPDIR\Xamarin\lib\pcl\Syncfusion.Core.XForms.dll</HintPath>
+    </Reference>
+    <Reference Include="Syncfusion.Licensing">
+      <HintPath>..\..\..\..\Installed Softwares\Syncfusion\APPDIR\Xamarin\lib\pcl\Syncfusion.Licensing.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+</Project>
