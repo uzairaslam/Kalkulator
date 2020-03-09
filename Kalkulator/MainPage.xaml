@@ -8,17 +8,18 @@
              x:Class="Kalkulator.MainPage"
              BackgroundColor="#bfbfbf">
     <StackLayout x:Name="StackMainContainer" Spacing="0" Padding="0" BackgroundColor="#bfbfbf">
-        <StackLayout x:Name="TopContainer" Spacing="0" Padding="0" BackgroundColor="#bfbfbf">
+        <StackLayout x:Name="TopContainer" HeightRequest="170" Spacing="0" Padding="0" BackgroundColor="#bfbfbf">
             <Label x:Name="lblStandard" Text="  Muhammad Uzair Aslam" TextColor="#000000" FontSize="35"/>
-            <Label x:Name="lblQHist" HorizontalTextAlignment="End" VerticalTextAlignment="End" Text="0" TextColor="#5e5e5f" FontSize="22" />
-            <Entry x:Name="entResult"  effects:KeyboardEffect.EnableKeyboard="False" HorizontalTextAlignment="End" Keyboard="Numeric" VerticalOptions="End" HeightRequest="80" Text="0" TextColor="#000000" FontSize="45">
+            <Label x:Name="lblQHist" HorizontalTextAlignment="End" VerticalTextAlignment="End" Text="" TextColor="#5e5e5f" FontSize="22" />
+            <Entry x:Name="entResult"  effects:KeyboardEffect.EnableKeyboard="False" HorizontalTextAlignment="End" Keyboard="Numeric" VerticalOptions="End" HeightRequest="80" Text="0" TextColor="#000000" FontSize="45" >
                 <Entry.Effects>
                     <effects:KeyboardEnableEffect/>
                 </Entry.Effects>
             </Entry>
         </StackLayout>
         <StackLayout x:Name="MiddleContainer" HeightRequest="60" Spacing="0" Padding="0" BackgroundColor="#bfbfbf">
-            <Grid x:Name="GridMemoryButtons" RowSpacing="0" ColumnSpacing="1" Padding="1">
+        <!--<StackLayout x:Name="MiddleContainer" HeightRequest="60" Spacing="0" Padding="0" BackgroundColor="#bfbfbf">-->
+            <Grid x:Name="GridMemoryButtons" RowSpacing="0" ColumnSpacing="1" Padding="0">
                 <Grid.ColumnDefinitions>
                     <ColumnDefinition Width="*" />
                     <ColumnDefinition Width="*" />
@@ -35,7 +36,7 @@
                 <Button Text="M+" Grid.Row="0" Grid.Column="2" FontSize="15" CornerRadius="0" BackgroundColor="#bfbfbf" TextColor="#000000" />
                 <Button Text="M-" Grid.Row="0" Grid.Column="3" FontSize="15" CornerRadius="0" BackgroundColor="#bfbfbf" TextColor="#000000" />
                 <Button Text="MS" Grid.Row="0" Grid.Column="4" FontSize="15" CornerRadius="0" BackgroundColor="#bfbfbf" TextColor="#000000" />
-                <Button Text="M" Grid.Row="0" Grid.Column="5"  FontSize="15" CornerRadius="0" BackgroundColor="#bfbfbf" TextColor="#989898" />
+                <Button Text="Mˇ" Grid.Row="0" Grid.Column="5"  FontSize="15" CornerRadius="0" BackgroundColor="#bfbfbf" TextColor="#989898" />
             </Grid>
         </StackLayout>
         <StackLayout x:Name="BottomContainer" Spacing="0" Padding="0" BackgroundColor="#bfbfbf">
@@ -52,39 +53,39 @@
                     <RowDefinition Height="*" />
                     <RowDefinition Height="*" />
                     <RowDefinition Height="*" />
-                    <RowDefinition Height="*" />
+                    <RowDefinition Height="Auto" />
                 </Grid.RowDefinitions>
                 <!--R0-->
                 <Button Text="%"  Grid.Row="0" Grid.Column="0" HeightRequest="72" FontSize="25" CornerRadius="0" BackgroundColor="#d7d7d7" TextColor="#3c3c3c" />
                 <Button Text="CE" Grid.Row="0" Grid.Column="1" HeightRequest="72" FontSize="25" CornerRadius="0" BackgroundColor="#d7d7d7" TextColor="#3c3c3c" />
-                <Button Text="C"  Grid.Row="0" Grid.Column="2" HeightRequest="72" FontSize="25" CornerRadius="0" BackgroundColor="#d7d7d7" TextColor="#3c3c3c" />
-                <Button Text="⌫"  Grid.Row="0" Grid.Column="3" HeightRequest="72" FontSize="25" CornerRadius="0" BackgroundColor="#d7d7d7" TextColor="#3c3c3c" />
+                <Button Text="C"    Grid.Row="0" Grid.Column="2" HeightRequest="72" FontSize="25" CornerRadius="0" BackgroundColor="#d7d7d7" TextColor="#3c3c3c" />
+                <Button x:Name="btnBack" Text="⌫"  Grid.Row="0" Grid.Column="3" HeightRequest="72" FontSize="25" CornerRadius="0" BackgroundColor="#d7d7d7" TextColor="#3c3c3c" Clicked="btnBack_Clicked" />
 
                 <!--R1-->
-                <Button Text="1/x" Grid.Row="1" Grid.Column="0" HeightRequest="72" FontSize="25" CornerRadius="0" BackgroundColor="#d7d7d7" TextColor="#3c3c3c" />
-                <Button Text="X²"  Grid.Row="1" Grid.Column="1" HeightRequest="72" FontSize="25" CornerRadius="0" BackgroundColor="#d7d7d7" TextColor="#3c3c3c" />
+                <Button Text="⅟x" Grid.Row="1" Grid.Column="0" HeightRequest="72" FontSize="25" CornerRadius="0" BackgroundColor="#d7d7d7" TextColor="#3c3c3c" />
+                <Button Text="x²"  Grid.Row="1" Grid.Column="1" HeightRequest="72" FontSize="25" CornerRadius="0" BackgroundColor="#d7d7d7" TextColor="#3c3c3c" />
                 <Button Text="√x"  Grid.Row="1" Grid.Column="2" HeightRequest="72" FontSize="25" CornerRadius="0" BackgroundColor="#d7d7d7" TextColor="#3c3c3c" />
                 <Button Text="÷"   Grid.Row="1" Grid.Column="3" HeightRequest="72" FontSize="25" CornerRadius="0" BackgroundColor="#d7d7d7" TextColor="#3c3c3c" />
 
                 <!--R2-->
-                <Button Text="7" Grid.Row="2" Grid.Column="0" HeightRequest="72" FontSize="25" CornerRadius="0" BackgroundColor="#f2f2f2" TextColor="#000000" />
-                <Button Text="8"  Grid.Row="2" Grid.Column="1" HeightRequest="72" FontSize="25" CornerRadius="0" BackgroundColor="#f2f2f2" TextColor="#000000" />
-                <Button Text="9"  Grid.Row="2" Grid.Column="2" HeightRequest="72" FontSize="25" CornerRadius="0" BackgroundColor="#f2f2f2" TextColor="#000000" />
+                <Button Text="7" Grid.Row="2" Grid.Column="0" HeightRequest="72" FontSize="25" CornerRadius="0" BackgroundColor="#f2f2f2" TextColor="#000000" Clicked="NumberButton_Clicked"/>
+                <Button Text="8"  Grid.Row="2" Grid.Column="1" HeightRequest="72" FontSize="25" CornerRadius="0" BackgroundColor="#f2f2f2" TextColor="#000000" Clicked="NumberButton_Clicked"/>
+                <Button Text="9"  Grid.Row="2" Grid.Column="2" HeightRequest="72" FontSize="25" CornerRadius="0" BackgroundColor="#f2f2f2" TextColor="#000000" Clicked="NumberButton_Clicked"/>
                 <Button Text="x"   Grid.Row="2" Grid.Column="3" HeightRequest="72" FontSize="25" CornerRadius="0" BackgroundColor="#d7d7d7" TextColor="#000000" />
 
 
                 <!--R3-->
-                <Button Text="4" Grid.Row="3" Grid.Column="0" HeightRequest="72" FontSize="25" CornerRadius="0" BackgroundColor="#f2f2f2" TextColor="#000000" />
-                <Button Text="5"  Grid.Row="3" Grid.Column="1" HeightRequest="72" FontSize="25" CornerRadius="0" BackgroundColor="#f2f2f2" TextColor="#000000" />
-                <Button Text="6"  Grid.Row="3" Grid.Column="2" HeightRequest="72" FontSize="25" CornerRadius="0" BackgroundColor="#f2f2f2" TextColor="#000000" />
+                <Button Text="4" Grid.Row="3" Grid.Column="0" HeightRequest="72" FontSize="25" CornerRadius="0" BackgroundColor="#f2f2f2" TextColor="#000000" Clicked="NumberButton_Clicked"/>
+                <Button Text="5"  Grid.Row="3" Grid.Column="1" HeightRequest="72" FontSize="25" CornerRadius="0" BackgroundColor="#f2f2f2" TextColor="#000000" Clicked="NumberButton_Clicked"/>
+                <Button Text="6"  Grid.Row="3" Grid.Column="2" HeightRequest="72" FontSize="25" CornerRadius="0" BackgroundColor="#f2f2f2" TextColor="#000000" Clicked="NumberButton_Clicked"/>
                 <Button Text="-"   Grid.Row="3" Grid.Column="3" HeightRequest="72" FontSize="25" CornerRadius="0" BackgroundColor="#d7d7d7" TextColor="#3c3c3c" />
 
 
                 <!--R4-->
-                <Button Text="1" Grid.Row="4" Grid.Column="0" HeightRequest="72" FontSize="25" CornerRadius="0" BackgroundColor="#f2f2f2" TextColor="#000000" />
-                <Button Text="2"  Grid.Row="4" Grid.Column="1" HeightRequest="72" FontSize="25" CornerRadius="0" BackgroundColor="#f2f2f2" TextColor="#000000" />
-                <Button Text="3"  Grid.Row="4" Grid.Column="2" HeightRequest="72" FontSize="25" CornerRadius="0" BackgroundColor="#f2f2f2" TextColor="#000000" />
-                <Button Text="+"   Grid.Row="4" Grid.Column="3" HeightRequest="72" FontSize="25" CornerRadius="0" BackgroundColor="#d7d7d7" TextColor="#3c3c3c" />
+                <Button Text="1" Grid.Row="4" Grid.Column="0" HeightRequest="72" FontSize="25" CornerRadius="0" BackgroundColor="#f2f2f2" TextColor="#000000" Clicked="NumberButton_Clicked"/>
+                <Button Text="2"  Grid.Row="4" Grid.Column="1" HeightRequest="72" FontSize="25" CornerRadius="0" BackgroundColor="#f2f2f2" TextColor="#000000" Clicked="NumberButton_Clicked"/>
+                <Button Text="3"  Grid.Row="4" Grid.Column="2" HeightRequest="72" FontSize="25" CornerRadius="0" BackgroundColor="#f2f2f2" TextColor="#000000" Clicked="NumberButton_Clicked"/>
+                <Button Text="+"   Grid.Row="4" Grid.Column="3" HeightRequest="72" FontSize="25" CornerRadius="0" BackgroundColor="#d7d7d7" TextColor="#3c3c3c" Clicked="OperationButton_Clicked" />
 
 
                 <!--R5-->
