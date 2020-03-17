@@ -57,6 +57,12 @@
     <Reference Include="Syncfusion.Cards.XForms.Android">
       <HintPath>..\..\..\..\Installed Softwares\Syncfusion\APPDIR\Xamarin\lib\android\Syncfusion.Cards.XForms.Android.dll</HintPath>
     </Reference>
+    <Reference Include="Syncfusion.Core.XForms">
+      <HintPath>..\..\..\..\Installed Softwares\Syncfusion\APPDIR\Xamarin\lib\pcl\Syncfusion.Core.XForms.dll</HintPath>
+    </Reference>
+    <Reference Include="Syncfusion.Core.XForms.Android">
+      <HintPath>..\..\..\..\Installed Softwares\Syncfusion\APPDIR\Xamarin\lib\android\Syncfusion.Core.XForms.Android.dll</HintPath>
+    </Reference>
     <Reference Include="Syncfusion.Licensing">
       <HintPath>..\..\..\..\Installed Softwares\Syncfusion\APPDIR\Xamarin\lib\android\Syncfusion.Licensing.dll</HintPath>
     </Reference>

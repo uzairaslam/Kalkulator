@@ -5,11 +5,13 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              xmlns:effects="clr-namespace:Xamarin.KeyboardHelper;assembly=Xamarin.KeyboardHelper"
              mc:Ignorable="d"
+             xmlns:syncfusion="clr-namespace:Syncfusion.XForms.Buttons;assembly=Syncfusion.Buttons.XForms"
              x:Class="Kalkulator.MainPage"
              BackgroundColor="#bfbfbf">
     <StackLayout x:Name="StackMainContainer" Spacing="0" Padding="0" BackgroundColor="#bfbfbf">
         <StackLayout x:Name="TopContainer" HeightRequest="170" Spacing="0" Padding="0" BackgroundColor="#bfbfbf">
-            <Label x:Name="lblStandard" Text="  Muhammad Uzair Aslam" TextColor="#000000" FontSize="35"/>
+            <!--<Label x:Name="lblStandard" Text="  Muhammad Uzair Aslam" TextColor="#000000" FontSize="35"/>-->
+            <syncfusion:SfCheckBox x:Name="checkBox" IsChecked="True" Text="DMAS" CornerRadius="5.0" FontSize="35" />
             <Label x:Name="lblQHist" HorizontalTextAlignment="End" VerticalTextAlignment="End" Text="" TextColor="#5e5e5f" FontSize="22" />
             <Entry x:Name="entResult"  effects:KeyboardEffect.EnableKeyboard="False" HorizontalTextAlignment="End" Keyboard="Numeric" VerticalOptions="End" HeightRequest="80" Text="0" TextColor="#000000" FontSize="45" >
                 <Entry.Effects>
@@ -58,27 +60,27 @@
                 <!--R0-->
                 <Button Text="%"  Grid.Row="0" Grid.Column="0" HeightRequest="72" FontSize="25" CornerRadius="0" BackgroundColor="#d7d7d7" TextColor="#3c3c3c" />
                 <Button Text="CE" Grid.Row="0" Grid.Column="1" HeightRequest="72" FontSize="25" CornerRadius="0" BackgroundColor="#d7d7d7" TextColor="#3c3c3c" />
-                <Button Text="C"    Grid.Row="0" Grid.Column="2" HeightRequest="72" FontSize="25" CornerRadius="0" BackgroundColor="#d7d7d7" TextColor="#3c3c3c" />
+                <Button Text="C"    Grid.Row="0" Grid.Column="2" HeightRequest="72" FontSize="25" CornerRadius="0" BackgroundColor="#d7d7d7" TextColor="#3c3c3c" Clicked="Reset_Clicked" />
                 <Button x:Name="btnBack" Text="⌫"  Grid.Row="0" Grid.Column="3" HeightRequest="72" FontSize="25" CornerRadius="0" BackgroundColor="#d7d7d7" TextColor="#3c3c3c" Clicked="btnBack_Clicked" />
 
                 <!--R1-->
                 <Button Text="⅟x" Grid.Row="1" Grid.Column="0" HeightRequest="72" FontSize="25" CornerRadius="0" BackgroundColor="#d7d7d7" TextColor="#3c3c3c" />
                 <Button Text="x²"  Grid.Row="1" Grid.Column="1" HeightRequest="72" FontSize="25" CornerRadius="0" BackgroundColor="#d7d7d7" TextColor="#3c3c3c" />
                 <Button Text="√x"  Grid.Row="1" Grid.Column="2" HeightRequest="72" FontSize="25" CornerRadius="0" BackgroundColor="#d7d7d7" TextColor="#3c3c3c" />
-                <Button Text="÷"   Grid.Row="1" Grid.Column="3" HeightRequest="72" FontSize="25" CornerRadius="0" BackgroundColor="#d7d7d7" TextColor="#3c3c3c" />
+                <Button Text="÷"   Grid.Row="1" Grid.Column="3" HeightRequest="72" FontSize="25" CornerRadius="0" BackgroundColor="#d7d7d7" TextColor="#3c3c3c" Clicked="OperationButton_Clicked" />
 
                 <!--R2-->
                 <Button Text="7" Grid.Row="2" Grid.Column="0" HeightRequest="72" FontSize="25" CornerRadius="0" BackgroundColor="#f2f2f2" TextColor="#000000" Clicked="NumberButton_Clicked"/>
                 <Button Text="8"  Grid.Row="2" Grid.Column="1" HeightRequest="72" FontSize="25" CornerRadius="0" BackgroundColor="#f2f2f2" TextColor="#000000" Clicked="NumberButton_Clicked"/>
                 <Button Text="9"  Grid.Row="2" Grid.Column="2" HeightRequest="72" FontSize="25" CornerRadius="0" BackgroundColor="#f2f2f2" TextColor="#000000" Clicked="NumberButton_Clicked"/>
-                <Button Text="x"   Grid.Row="2" Grid.Column="3" HeightRequest="72" FontSize="25" CornerRadius="0" BackgroundColor="#d7d7d7" TextColor="#000000" />
+                <Button Text="x"   Grid.Row="2" Grid.Column="3" HeightRequest="72" FontSize="25" CornerRadius="0" BackgroundColor="#d7d7d7" TextColor="#000000" Clicked="OperationButton_Clicked" />
 
 
                 <!--R3-->
                 <Button Text="4" Grid.Row="3" Grid.Column="0" HeightRequest="72" FontSize="25" CornerRadius="0" BackgroundColor="#f2f2f2" TextColor="#000000" Clicked="NumberButton_Clicked"/>
                 <Button Text="5"  Grid.Row="3" Grid.Column="1" HeightRequest="72" FontSize="25" CornerRadius="0" BackgroundColor="#f2f2f2" TextColor="#000000" Clicked="NumberButton_Clicked"/>
                 <Button Text="6"  Grid.Row="3" Grid.Column="2" HeightRequest="72" FontSize="25" CornerRadius="0" BackgroundColor="#f2f2f2" TextColor="#000000" Clicked="NumberButton_Clicked"/>
-                <Button Text="-"   Grid.Row="3" Grid.Column="3" HeightRequest="72" FontSize="25" CornerRadius="0" BackgroundColor="#d7d7d7" TextColor="#3c3c3c" />
+                <Button Text="-"   Grid.Row="3" Grid.Column="3" HeightRequest="72" FontSize="25" CornerRadius="0" BackgroundColor="#d7d7d7" TextColor="#3c3c3c" Clicked="OperationButton_Clicked" />
 
 
                 <!--R4-->
@@ -90,9 +92,9 @@
 
                 <!--R5-->
                 <Button Text="+/-" Grid.Row="5" Grid.Column="0" HeightRequest="72" FontSize="25" CornerRadius="0" BackgroundColor="#f2f2f2" TextColor="#000000" />
-                <Button Text="0"  Grid.Row="5" Grid.Column="1" HeightRequest="72" FontSize="25" CornerRadius="0" BackgroundColor="#f2f2f2" TextColor="#000000" />
-                <Button Text="."  Grid.Row="5" Grid.Column="2" HeightRequest="72" FontSize="25" CornerRadius="0" BackgroundColor="#f2f2f2" TextColor="#000000" />
-                <Button Text="="   Grid.Row="5" Grid.Column="3" HeightRequest="72" FontSize="25" CornerRadius="0" BackgroundColor="#e0b0b0" TextColor="#3c3c3c" />
+                <Button Text="0"  Grid.Row="5" Grid.Column="1" HeightRequest="72" FontSize="25" CornerRadius="0" BackgroundColor="#f2f2f2" TextColor="#000000" Clicked="NumberButton_Clicked"/>
+                <Button Text="."  Grid.Row="5" Grid.Column="2" HeightRequest="72" FontSize="25" CornerRadius="0" BackgroundColor="#f2f2f2" TextColor="#000000" Clicked="NumberButton_Clicked"/>
+                <Button Text="="   Grid.Row="5" Grid.Column="3" HeightRequest="72" FontSize="25" CornerRadius="0" BackgroundColor="#e0b0b0" TextColor="#3c3c3c" Clicked="EqualButton_Clicked" />
             </Grid>
         </StackLayout>
     </StackLayout>
